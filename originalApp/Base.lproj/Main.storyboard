@@ -260,7 +260,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lmn-M7-RIJ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your new name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lmn-M7-RIJ">
                                 <rect key="frame" x="57" y="124" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="FnJ-N7-zAz"/>
@@ -275,7 +275,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="ckz-VU-Nsb"/>
                                 </constraints>
-                                <state key="normal" title="Change"/>
+                                <state key="normal" title="Change your name"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>
@@ -283,6 +283,17 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="tapChangeButton:" destination="kgn-Gl-Fc8" eventType="touchUpInside" id="xdX-lz-wux"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lph-zS-9Ya">
+                                <rect key="frame" x="57" y="382" width="300" height="34"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="sMo-mZ-Zvi"/>
+                                </constraints>
+                                <state key="normal" title="Password Reset"/>
+                                <connections>
+                                    <action selector="tapOnPassworReset:" destination="kgn-Gl-Fc8" eventType="touchUpInside" id="nwq-P2-cjG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4GG-0Y-Mn0">
@@ -301,19 +312,33 @@
                                     <action selector="tapLogoutButton:" destination="kgn-Gl-Fc8" eventType="touchUpInside" id="WTU-6y-YKx"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="txQ-IB-CWz">
+                                <rect key="frame" x="57" y="342" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="f30-I9-Ezm"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" textContentType="email"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="4GG-0Y-Mn0" firstAttribute="top" secondItem="vCB-Pd-6fT" secondAttribute="bottom" constant="10" id="MrH-mb-SgY"/>
+                            <constraint firstItem="txQ-IB-CWz" firstAttribute="top" secondItem="4GG-0Y-Mn0" secondAttribute="bottom" constant="100" id="4DT-gH-efi"/>
+                            <constraint firstItem="txQ-IB-CWz" firstAttribute="centerX" secondItem="024-MJ-VT5" secondAttribute="centerX" id="AZG-Ew-vYq"/>
+                            <constraint firstItem="4GG-0Y-Mn0" firstAttribute="top" secondItem="vCB-Pd-6fT" secondAttribute="bottom" constant="10" id="NUt-bl-Xsl"/>
+                            <constraint firstItem="Lmn-M7-RIJ" firstAttribute="top" secondItem="mZw-km-dXS" secondAttribute="top" constant="80" id="SZT-Le-xHi"/>
                             <constraint firstItem="4GG-0Y-Mn0" firstAttribute="centerX" secondItem="024-MJ-VT5" secondAttribute="centerX" id="a9e-ci-W3T"/>
                             <constraint firstItem="Lmn-M7-RIJ" firstAttribute="centerX" secondItem="024-MJ-VT5" secondAttribute="centerX" id="dkr-Lp-uho"/>
-                            <constraint firstItem="vCB-Pd-6fT" firstAttribute="top" secondItem="Lmn-M7-RIJ" secondAttribute="bottom" constant="10" id="q2X-nw-ky8"/>
-                            <constraint firstItem="Lmn-M7-RIJ" firstAttribute="top" secondItem="mZw-km-dXS" secondAttribute="top" constant="80" id="qo1-P6-BYS"/>
+                            <constraint firstItem="lph-zS-9Ya" firstAttribute="top" secondItem="txQ-IB-CWz" secondAttribute="bottom" constant="10" id="j7b-XS-2c9"/>
+                            <constraint firstItem="lph-zS-9Ya" firstAttribute="centerX" secondItem="024-MJ-VT5" secondAttribute="centerX" id="kYk-W0-iRu"/>
+                            <constraint firstItem="vCB-Pd-6fT" firstAttribute="top" secondItem="Lmn-M7-RIJ" secondAttribute="bottom" constant="10" id="pLf-gA-URF"/>
                             <constraint firstItem="vCB-Pd-6fT" firstAttribute="centerX" secondItem="024-MJ-VT5" secondAttribute="centerX" id="u5D-QY-iEE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mZw-km-dXS"/>
                     </view>
                     <connections>
+                        <outlet property="emaiTextField" destination="txQ-IB-CWz" id="RCG-mu-zMh"/>
                         <outlet property="nameTextField" destination="Lmn-M7-RIJ" id="xUx-yK-DSm"/>
                     </connections>
                 </viewController>

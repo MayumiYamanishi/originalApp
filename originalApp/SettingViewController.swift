@@ -14,7 +14,8 @@ import SVProgressHUD
 class SettingViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
-
+    @IBOutlet weak var emaiTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -49,12 +50,27 @@ class SettingViewController: UIViewController {
                     }
                     print("DEBUG_PRINT: The setting of [displayName = \(user.displayName!)] was successful.")
                     
-                    SVProgressHUD.showSuccess(withStatus: "The display name has been set.")
+                    SVProgressHUD.showSuccess(withStatus: "Your name has been set.")
                 }
             }
         }
         
         self.view.endEditing(true)
+    }
+    
+    // password reset
+    @IBAction func tapOnPassworReset(_ sender: Any) {
+        
+        let email = emaiTextField.text ?? ""
+        
+        Auth.auth().sendPasswordReset(withEmail: email) { [weak self] error in
+            guard let self = self else { return }
+            if error != nil {
+                SVProgressHUD.show(withStatus: "Your new e-mail addresss has been set.")
+            }
+            SVProgressHUD.showError(withStatus: "Your new e-mail address can't have been set.")
+        }
+        
     }
     
     @IBAction func tapLogoutButton(_ sender: Any) {
