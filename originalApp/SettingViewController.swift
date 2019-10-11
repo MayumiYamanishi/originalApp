@@ -13,64 +13,24 @@ import SVProgressHUD
 
 class SettingViewController: UIViewController {
     
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var emaiTextField: UITextField!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let user = Auth.auth().currentUser
-        if let user = user {
-            nameTextField.text = user.displayName
-        }
     }
     
-    @IBAction func tapChangeButton(_ sender: Any) {
-        
-        // 表示名の変更
-        if let name = nameTextField.text {
-            if name.isEmpty {
-                SVProgressHUD.showError(withStatus: "Enter your name.")
-                return
-            }
-            
-            let user = Auth.auth().currentUser
-            if let user = user {
-                let changeRequest = user.createProfileChangeRequest()
-                changeRequest.displayName = name
-                changeRequest.commitChanges { error in
-                    if let error = error {
-                        SVProgressHUD.showError(withStatus: "Failed to get your name.")
-                        print("DEBUG_PRINT: " + error.localizedDescription)
-                        return
-                    }
-                    print("DEBUG_PRINT: The setting of [displayName = \(user.displayName!)] was successful.")
-                    
-                    SVProgressHUD.showSuccess(withStatus: "Your name has been set.")
-                }
-            }
-        }
-        
-        self.view.endEditing(true)
+    @IBAction func taoOnProdileEdit(_ sender: Any) {
+        // プロフィールを表示するイベントに移動
+        let editProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditProfile")
+        self.present(editProfileViewController!, animated: true, completion: nil)
     }
     
-    // password reset
-    @IBAction func tapOnPassworReset(_ sender: Any) {
-        
-        let email = emaiTextField.text ?? ""
-        
-        Auth.auth().sendPasswordReset(withEmail: email) { [weak self] error in
-            guard let self = self else { return }
-            if error != nil {
-                SVProgressHUD.show(withStatus: "Your new e-mail addresss has been set.")
-            }
-            SVProgressHUD.showError(withStatus: "Your new e-mail address can't have been set.")
-        }
-        
+    @IBAction func tapOnWillJoinEvent(_ sender: Any) {
+        // 参加イベントを表示するページに移動
+        let joinEventViewController = self.storyboard?.instantiateViewController(withIdentifier: "JoinEvent")
+        self.present(joinEventViewController!, animated: true, completion: nil)
     }
     
     @IBAction func tapLogoutButton(_ sender: Any) {
