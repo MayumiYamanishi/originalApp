@@ -35,29 +35,25 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         nameChange()
         
+        // user-idの取得
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        let postRef = Database.database().reference().child(Const.ProfPath).child(uid)
+        var postDic: [String: Any] = [:]
+        
         // place change
-        if placeTextField.text != nil {
-            //user-idの取得
-            let uid = Auth.auth().currentUser?.uid
-            
-            let postRef = Database.database().reference().child(Const.ProfPath).child(uid!)
-            let postDic = ["place": placeTextField.text!]
-            postRef.childByAutoId().setValue(postDic)
+        if let place = placeTextField.text {
+            postDic["place"] = place
         }
         
         // image change
-        if image != nil {
-            
-            let imageData = imageView.image!.jpegData(compressionQuality: 0.5)
-            let imageString = imageData!.base64EncodedString(options: .lineLength64Characters)
-            
-            //user-idの取得
-            let uid = Auth.auth().currentUser?.uid
-            
-            let postRef = Database.database().reference().child(Const.ProfPath).child(uid!)
-            let postDic = ["image": imageString]
-            postRef.childByAutoId().setValue(postDic)
+        if let image = image, let imageData = image.jpegData(compressionQuality: 0.5) {
+            let imageString = imageData.base64EncodedString(options: .lineLength64Characters)
+            postDic["image"] = imageString
         }
+        
+        postRef.setValue(postDic)
         
         self.view.endEditing(true)
         
