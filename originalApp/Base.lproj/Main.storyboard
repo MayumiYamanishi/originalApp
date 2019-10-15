@@ -276,24 +276,8 @@
                                     <action selector="taoOnProdileEdit:" destination="kgn-Gl-Fc8" eventType="touchUpInside" id="PL4-V4-JfW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Oh-BL-xr0">
-                                <rect key="frame" x="57" y="168" width="300" height="34"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="Ndz-U6-0Nf"/>
-                                </constraints>
-                                <state key="normal" title="参加イベント"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="tapOnWillJoinEvent:" destination="kgn-Gl-Fc8" eventType="touchUpInside" id="puS-no-YEt"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4GG-0Y-Mn0">
-                                <rect key="frame" x="57" y="212" width="300" height="34"/>
+                                <rect key="frame" x="57" y="168" width="300" height="34"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="MuY-mp-9mP"/>
@@ -312,11 +296,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wIG-VX-k0m" firstAttribute="top" secondItem="mZw-km-dXS" secondAttribute="top" constant="80" id="Arb-U6-VNg"/>
-                            <constraint firstItem="4GG-0Y-Mn0" firstAttribute="top" secondItem="5Oh-BL-xr0" secondAttribute="bottom" constant="10" id="MFS-s5-8k6"/>
+                            <constraint firstItem="4GG-0Y-Mn0" firstAttribute="top" secondItem="wIG-VX-k0m" secondAttribute="bottom" constant="10" id="HYg-U8-srH"/>
                             <constraint firstItem="4GG-0Y-Mn0" firstAttribute="centerX" secondItem="024-MJ-VT5" secondAttribute="centerX" id="a9e-ci-W3T"/>
                             <constraint firstItem="wIG-VX-k0m" firstAttribute="centerX" secondItem="024-MJ-VT5" secondAttribute="centerX" id="gPy-qR-txC"/>
-                            <constraint firstItem="5Oh-BL-xr0" firstAttribute="top" secondItem="wIG-VX-k0m" secondAttribute="bottom" constant="10" id="s33-US-4GH"/>
-                            <constraint firstItem="5Oh-BL-xr0" firstAttribute="centerX" secondItem="024-MJ-VT5" secondAttribute="centerX" id="xDI-q7-s6F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mZw-km-dXS"/>
                     </view>
