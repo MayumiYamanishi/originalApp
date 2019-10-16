@@ -39,18 +39,20 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         guard let uid = Auth.auth().currentUser?.uid else {
             return
         }
+        
+        // DB create
         let postRef = Database.database().reference().child(Const.ProfPath).child(uid)
         var postDic: [String: Any] = [:]
-        
-        // place change
-        if let place = placeTextField.text {
-            postDic["place"] = place
-        }
         
         // image change
         if let image = image, let imageData = image.jpegData(compressionQuality: 0.5) {
             let imageString = imageData.base64EncodedString(options: .lineLength64Characters)
             postDic["image"] = imageString
+        }
+        
+        // place change
+        if let place = placeTextField.text {
+            postDic["place"] = place
         }
         
         postRef.setValue(postDic)

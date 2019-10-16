@@ -16,6 +16,7 @@ class ProfileData: NSObject {
     var image: UIImage?
     var imageString: String?
     var place: String?
+    var events: [String] = []
     
     // 変数宣言
     init(snapshot: DataSnapshot, myId: String) {
@@ -27,6 +28,10 @@ class ProfileData: NSObject {
         image = UIImage(data: Data(base64Encoded: imageString!, options: .ignoreUnknownCharacters)!)
         
         self.place = valueDictionary["place"] as? String
+        
+        if let events = valueDictionary["events"] as? [String] {
+            self.events = events
+        }
         
     }
 

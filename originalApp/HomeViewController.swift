@@ -123,6 +123,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // セル内のボタンがタップされた時に呼ばれるメソッド
     @objc func joinButton(_ sender: UIButton, forEvent event: UIEvent) {
+        // プロフィール情報にユーザのイベント情報を追加
+        if let uid = Auth.auth().currentUser?.uid {
+            let profRef = Database.database().reference().child(Const.ProfPath).child(uid)
+            var profDic: [String: Any] = [:]
+                profRef.observe(.childAdded, with: { snapshot in
+                        let postData = PostData(snapshot: snapshot, myId: uid)
+                        profDic["events"] = postData.id
+                })
+        }
         
         print("DEBUG_PRINT: ボタンがタップされました。")
         SVProgressHUD.showInfo(withStatus: "Joined.")
