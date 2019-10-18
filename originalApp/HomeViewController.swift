@@ -123,14 +123,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // セル内のボタンがタップされた時に呼ばれるメソッド
     @objc func joinButton(_ sender: UIButton, forEvent event: UIEvent) {
+        // セルを取得してデータを設定
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostTableViewCell
+        cell.setPostData(postArray[indexPath.row])
         // プロフィール情報にユーザのイベント情報を追加
         if let uid = Auth.auth().currentUser?.uid {
             let profRef = Database.database().reference().child(Const.ProfPath).child(uid)
-            var profDic: [String: Any] = [:]
-                profRef.observe(.childAdded, with: { snapshot in
-                        let postData = PostData(snapshot: snapshot, myId: uid)
-                        profDic["events"] = postData.id
-                })
+            profRef.events.append(events id)
+            let events = ["events": profRef.events]
+            profRef.updateChildValues(events)
         }
         
         print("DEBUG_PRINT: ボタンがタップされました。")
