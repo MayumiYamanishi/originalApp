@@ -28,6 +28,7 @@
 		9ED445B5234B19EE00800140 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED445B4234B19EE00800140 /* PostViewController.swift */; };
 		9ED445B7234B19FA00800140 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED445B6234B19FA00800140 /* SettingViewController.swift */; };
 		D012ED082359C93000DA6FA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D012ED072359C93000DA6FA1 /* GoogleService-Info.plist */; };
+		D07AE27B236021150032F58F /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = D07AE27A236021150032F58F /* index.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		BB9CDBD787D903ED2B2AF781 /* Pods_originalApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_originalApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC614E9B07E64DB10E3F27E5 /* Pods-originalApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-originalApp.release.xcconfig"; path = "Target Support Files/Pods-originalApp/Pods-originalApp.release.xcconfig"; sourceTree = "<group>"; };
 		D012ED072359C93000DA6FA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D07AE27A236021150032F58F /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		9ED4459D234B18EC00800140 /* originalApp */ = {
 			isa = PBXGroup;
 			children = (
+				D07AE279236017B70032F58F /* docs */,
 				9ED4459E234B18EC00800140 /* AppDelegate.swift */,
 				9ED445A0234B18EC00800140 /* ViewController.swift */,
 				9ED445A2234B18EC00800140 /* Main.storyboard */,
@@ -131,6 +134,14 @@
 				BC614E9B07E64DB10E3F27E5 /* Pods-originalApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D07AE279236017B70032F58F /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				D07AE27A236021150032F58F /* index.html */,
+			);
+			path = docs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D07AE27B236021150032F58F /* index.html in Resources */,
 				9ED445A9234B18EF00800140 /* LaunchScreen.storyboard in Resources */,
 				9E55C4C1234D830300A4A8EB /* PostTableViewCell.xib in Resources */,
 				9ED445A6234B18EF00800140 /* Assets.xcassets in Resources */,
