@@ -69,6 +69,10 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVw-k1-oea">
+                        <rect key="frame" x="384" y="351.5" width="62" height="30"/>
+                        <state key="normal" title="通報する"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="AaP-sH-VWy" firstAttribute="top" secondItem="QyY-JN-9wE" secondAttribute="bottom" constant="10" id="8aA-Za-3ag"/>
@@ -79,9 +83,11 @@
                     <constraint firstItem="TUU-pt-h47" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="dy3-dm-97x"/>
                     <constraint firstItem="eXK-xP-cI3" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="gl6-Z8-My3"/>
                     <constraint firstAttribute="bottomMargin" secondItem="eXK-xP-cI3" secondAttribute="bottom" constant="60" id="nQ1-hb-grI"/>
+                    <constraint firstAttribute="trailing" secondItem="IVw-k1-oea" secondAttribute="trailing" constant="50" id="nq3-W4-9pw"/>
                     <constraint firstItem="QyY-JN-9wE" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="qSi-X1-nvY"/>
                     <constraint firstItem="n0Y-If-5Cf" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="wnR-2h-Sd3"/>
                     <constraint firstItem="n0Y-If-5Cf" firstAttribute="top" secondItem="AaP-sH-VWy" secondAttribute="bottom" constant="10" id="xZA-q1-cd1"/>
+                    <constraint firstAttribute="bottom" secondItem="IVw-k1-oea" secondAttribute="bottom" constant="30" id="yU2-Lb-5OU"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -90,6 +96,7 @@
                 <outlet property="detailLabel" destination="QyY-JN-9wE" id="O98-Gl-0se"/>
                 <outlet property="joinButton" destination="eXK-xP-cI3" id="GQI-iz-MkI"/>
                 <outlet property="placeLabel" destination="AaP-sH-VWy" id="gZv-Av-dh1"/>
+                <outlet property="reportButton" destination="IVw-k1-oea" id="tGj-6M-foP"/>
                 <outlet property="titleLabel" destination="TUU-pt-h47" id="d35-XT-2fe"/>
             </connections>
             <point key="canvasLocation" x="265.21739130434787" y="229.01785714285714"/>

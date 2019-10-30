@@ -117,15 +117,24 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // セル内のボタンのアクションをソースコードで設定する
         cell.joinButton.addTarget(self, action: #selector(joinButton(_:forEvent:)), for: .touchUpInside)
+        cell.reportButton.addTarget(self, action: #selector(reportButton(_:forEvent:)), for: .touchUpInside)
         
         return cell
     }
     
-    // セル内のボタンがタップされた時に呼ばれるメソッド
+    // 参加ボタンタップ時
     @objc func joinButton(_ sender: UIButton, forEvent event: UIEvent) {
         
         print("DEBUG_PRINT: ボタンがタップされました。")
         SVProgressHUD.showInfo(withStatus: "Joined.")
+        
+    }
+    
+    // 通報ボタンタップ時
+    @objc func reportButton(_ sender: UIButton, forEvent event: UIEvent) {
+        
+        let reportViewController = self.storyboard?.instantiateViewController(withIdentifier: "report")
+        self.present(reportViewController!, animated: true, completion: nil)
         
     }
 

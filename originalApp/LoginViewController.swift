@@ -16,6 +16,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwdTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     
+    @IBAction func taoOnTOS(_ sender: Any) {
+        
+        let tosViewController = self.storyboard?.instantiateViewController(withIdentifier: "TOS")
+        self.present(tosViewController!, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func tapLogin(_ sender: Any) {
         if let address = mailTextField.text, let passwd = passwdTextField.text {
             if address.isEmpty || passwd.isEmpty {
