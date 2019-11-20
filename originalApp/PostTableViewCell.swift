@@ -16,6 +16,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var joinButton: UIButton!
     @IBOutlet weak var reportButton: UIButton!
+    @IBOutlet weak var blockButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

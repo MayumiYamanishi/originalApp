@@ -12,6 +12,7 @@
 		9E55C4BD234D79B400A4A8EB /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E55C4BC234D79B400A4A8EB /* PostData.swift */; };
 		9E55C4C0234D830300A4A8EB /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E55C4BE234D830300A4A8EB /* PostTableViewCell.swift */; };
 		9E55C4C1234D830300A4A8EB /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E55C4BF234D830300A4A8EB /* PostTableViewCell.xib */; };
+		9E9125C6237E976200545E11 /* BlockListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9125C5237E976200545E11 /* BlockListData.swift */; };
 		9EAB77EE234F014100944F3C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB77ED234F014100944F3C /* EditProfileViewController.swift */; };
 		9EAB77F1234F017E00944F3C /* JoinEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB77EF234F017E00944F3C /* JoinEventTableViewCell.swift */; };
 		9EAB77F2234F017E00944F3C /* JoinEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB77F0234F017E00944F3C /* JoinEventTableViewCell.xib */; };
@@ -38,6 +39,7 @@
 		9E55C4BC234D79B400A4A8EB /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		9E55C4BE234D830300A4A8EB /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		9E55C4BF234D830300A4A8EB /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		9E9125C5237E976200545E11 /* BlockListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListData.swift; sourceTree = "<group>"; };
 		9EAB77ED234F014100944F3C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		9EAB77EF234F017E00944F3C /* JoinEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinEventTableViewCell.swift; sourceTree = "<group>"; };
 		9EAB77F0234F017E00944F3C /* JoinEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinEventTableViewCell.xib; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				9EAB77F92350575C00944F3C /* ProfileData.swift */,
 				9ED85F0F23684E6F00559EC5 /* TOSViewController.swift */,
 				9ED85F1123691EC800559EC5 /* ReportViewController.swift */,
+				9E9125C5237E976200545E11 /* BlockListData.swift */,
 			);
 			path = originalApp;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				9ED445B1234B19D100800140 /* LoginViewController.swift in Sources */,
 				9E55C4BD234D79B400A4A8EB /* PostData.swift in Sources */,
 				9ED445A1234B18EC00800140 /* ViewController.swift in Sources */,
+				9E9125C6237E976200545E11 /* BlockListData.swift in Sources */,
 				9ED4459F234B18EC00800140 /* AppDelegate.swift in Sources */,
 				9ED445B3234B19E000800140 /* HomeViewController.swift in Sources */,
 				9E55C4BB234C843E00A4A8EB /* Const.swift in Sources */,

@@ -35,11 +35,12 @@ class PostViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     @IBAction func tapPost(_ sender: Any) {
         
         let name = Auth.auth().currentUser?.displayName
+        let uid = Auth.auth().currentUser?.uid
         let date = datePicker.date
         let pickerDate = date.timeIntervalSinceReferenceDate
         
         let postRef = Database.database().reference().child(Const.PostPath)
-        let postDic = ["title": titleTextField.text!, "detail": detailTextView.text!, "place": placeTextField.text!, "name": name!, "date": String(pickerDate)]
+        let postDic = ["uid": uid!, "title": titleTextField.text!, "detail": detailTextView.text!, "place": placeTextField.text!, "name": name!, "date": String(pickerDate)]
         postRef.childByAutoId().setValue(postDic)
         
         SVProgressHUD.showSuccess(withStatus: "Posted.")

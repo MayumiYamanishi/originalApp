@@ -15,6 +15,7 @@ class PostData: NSObject {
     var detail: String?
     var place: String?
     var date: Date?
+    var uid: String?
     
     init(snapshot: DataSnapshot, myId: String) {
         self.id = snapshot.key
@@ -24,6 +25,7 @@ class PostData: NSObject {
         self.place = valueDictionary["place"] as? String
         let time = valueDictionary["date"] as? String
         self.date = Date(timeIntervalSinceReferenceDate: TimeInterval(time!)!)
+        self.uid = valueDictionary["uid"] as? String
     }
 
 }

@@ -57,7 +57,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXK-xP-cI3">
-                        <rect key="frame" x="98" y="273" width="300" height="34"/>
+                        <rect key="frame" x="98" y="273" width="300" height="68"/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="300" id="slA-R6-oiZ"/>
@@ -73,18 +73,25 @@
                         <rect key="frame" x="384" y="351.5" width="62" height="30"/>
                         <state key="normal" title="通報する"/>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qB7-T6-efR">
+                        <rect key="frame" x="312" y="351" width="62" height="30.5"/>
+                        <state key="normal" title="ブロック"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="AaP-sH-VWy" firstAttribute="top" secondItem="QyY-JN-9wE" secondAttribute="bottom" constant="10" id="8aA-Za-3ag"/>
+                    <constraint firstItem="qB7-T6-efR" firstAttribute="top" secondItem="eXK-xP-cI3" secondAttribute="bottom" constant="10" id="BW8-vc-VdL"/>
                     <constraint firstItem="TUU-pt-h47" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="50" id="EET-hM-CNc"/>
                     <constraint firstItem="AaP-sH-VWy" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Gww-aL-ddm"/>
                     <constraint firstItem="eXK-xP-cI3" firstAttribute="top" secondItem="n0Y-If-5Cf" secondAttribute="bottom" constant="30" id="NLD-D9-Pjm"/>
                     <constraint firstItem="QyY-JN-9wE" firstAttribute="top" secondItem="TUU-pt-h47" secondAttribute="bottom" constant="10" id="Yb9-0g-R1r"/>
                     <constraint firstItem="TUU-pt-h47" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="dy3-dm-97x"/>
+                    <constraint firstItem="IVw-k1-oea" firstAttribute="leading" secondItem="qB7-T6-efR" secondAttribute="trailing" constant="10" id="fgD-Ql-CEP"/>
                     <constraint firstItem="eXK-xP-cI3" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="gl6-Z8-My3"/>
                     <constraint firstAttribute="bottomMargin" secondItem="eXK-xP-cI3" secondAttribute="bottom" constant="60" id="nQ1-hb-grI"/>
                     <constraint firstAttribute="trailing" secondItem="IVw-k1-oea" secondAttribute="trailing" constant="50" id="nq3-W4-9pw"/>
                     <constraint firstItem="QyY-JN-9wE" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="qSi-X1-nvY"/>
+                    <constraint firstAttribute="bottom" secondItem="qB7-T6-efR" secondAttribute="bottom" constant="30" id="wFK-AN-Voh"/>
                     <constraint firstItem="n0Y-If-5Cf" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="wnR-2h-Sd3"/>
                     <constraint firstItem="n0Y-If-5Cf" firstAttribute="top" secondItem="AaP-sH-VWy" secondAttribute="bottom" constant="10" id="xZA-q1-cd1"/>
                     <constraint firstAttribute="bottom" secondItem="IVw-k1-oea" secondAttribute="bottom" constant="30" id="yU2-Lb-5OU"/>
@@ -92,6 +99,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="blockButton" destination="qB7-T6-efR" id="VSc-X7-EVs"/>
                 <outlet property="dateLabel" destination="n0Y-If-5Cf" id="OCc-9S-kpz"/>
                 <outlet property="detailLabel" destination="QyY-JN-9wE" id="O98-Gl-0se"/>
                 <outlet property="joinButton" destination="eXK-xP-cI3" id="GQI-iz-MkI"/>
