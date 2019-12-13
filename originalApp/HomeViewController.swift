@@ -10,6 +10,16 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
+extension UIColor {
+    convenience init(hex: String, alpha: CGFloat = 1.0) {
+        let v = Int("000000" + hex, radix: 16) ?? 0
+        let r = CGFloat(v / Int(powf(256, 2)) % 256) / 255
+        let g = CGFloat(v / Int(powf(256, 1)) % 256) / 255
+        let b = CGFloat(v / Int(powf(256, 0)) % 256) / 255
+        self.init(red: r, green: g, blue: b, alpha: min(max(alpha, 0), 1))
+    }
+}
+
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -38,6 +48,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // ディスクの永続性　アプリのデータはデバイスのローカルに書き込まれる
         Database.database().isPersistenceEnabled = true
+        
+        //
+        // 上のタイトルバー
+        self.navigationItem.title = "title"
+        self.navigationItem.titleView?.tintColor = UIColor(hex: "007AFF")
+        
+        // 次の画面のBackボタンを「戻る」に変更
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(
+            title:  "戻る",
+            style:  .plain,
+            target: nil,
+            action: nil
+        )
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -196,5 +219,42 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        }
         
     }
+    
+//    func upsideTab() {
+//        let tabBarController: ESTabBarController! = ESTabBarController(tabIconNames: ["home", "camera", "setting"])
+//
+//        // 背景色、選択時の色を設定する
+//        tabBarController.selectedColor = UIColor.rgba(red: 30, green: 144, blue: 255, alpha: 1)
+//        tabBarController.buttonsBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+//        tabBarController.selectionIndicatorHeight = 3
+//
+//        // 作成したESTabBarControllerを親のViewControllerに追加
+//        addChild(tabBarController) // 子のtabBarControllerを親のViewControllerに追加
+//        let tabBarView = tabBarController.view! // tabBarViewを生成
+//        tabBarView.translatesAutoresizingMaskIntoConstraints = false
+//        // translatesAutoresizingMaskIntoConstraints = false: 制約を自分で適用
+//        //                                              true: 自動で制約を適用
+//        view.addSubview(tabBarView) //subviewとしてviewに追加
+//        let safeArea = view.safeAreaLayoutGuide // The layout guide representing the portion of your view that is unobscured by bars and other content.
+//        NSLayoutConstraint.activate([
+//            tabBarView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+//            tabBarView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+//            tabBarView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+//            tabBarView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor)
+//            ])
+//        tabBarController.didMove(toParent: self) // Tells you when the scene is presented by a view.
+//
+//        // タブをタップしたときに表示するViewControllerを作成
+//        let homeViewController = storyboard?.instantiateViewController(withIdentifier: "Home")
+//        let settingViewController = storyboard?.instantiateViewController(withIdentifier: "Setting")
+//
+//        tabBarController.setView(homeViewController, at: 0)
+//        tabBarController.setView(settingViewController, at: 2)
+//
+//        tabBarController.setAction({
+//            let postViewController = self.storyboard?.instantiateViewController(withIdentifier: "Post")
+//            self.present(postViewController!, animated: true, completion: nil)
+//        }, at: 1)
+//    }
     
 }
